@@ -1,0 +1,25 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://dqauoem5ak6um"
+path="res://.godot/imported/track-striped-wide-straight-bend.obj-9cd23defdf17f532fa208480a1a7cf85.mesh"
+
+[deps]
+
+files=["res://.godot/imported/track-striped-wide-straight-bend.obj-9cd23defdf17f532fa208480a1a7cf85.mesh"]
+
+source_file="res://src/assets/Models/OBJ format/track-striped-wide-straight-bend.obj"
+dest_files=["res://.godot/imported/track-striped-wide-straight-bend.obj-9cd23defdf17f532fa208480a1a7cf85.mesh", "res://.godot/imported/track-striped-wide-straight-bend.obj-9cd23defdf17f532fa208480a1a7cf85.mesh"]
+
+[params]
+
+generate_tangents=true
+generate_lods=true
+generate_shadow_mesh=true
+generate_lightmap_uv2=false
+generate_lightmap_uv2_texel_size=0.2
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+force_disable_mesh_compression=false

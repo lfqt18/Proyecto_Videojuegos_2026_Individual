@@ -1,0 +1,25 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://de5bi2r03tul4"
+path="res://.godot/imported/track-wide-straight-skew-left.obj-1f4f3a645dd0e34f32c98d43565988f4.mesh"
+
+[deps]
+
+files=["res://.godot/imported/track-wide-straight-skew-left.obj-1f4f3a645dd0e34f32c98d43565988f4.mesh"]
+
+source_file="res://src/assets/Models/OBJ format/track-wide-straight-skew-left.obj"
+dest_files=["res://.godot/imported/track-wide-straight-skew-left.obj-1f4f3a645dd0e34f32c98d43565988f4.mesh", "res://.godot/imported/track-wide-straight-skew-left.obj-1f4f3a645dd0e34f32c98d43565988f4.mesh"]
+
+[params]
+
+generate_tangents=true
+generate_lods=true
+generate_shadow_mesh=true
+generate_lightmap_uv2=false
+generate_lightmap_uv2_texel_size=0.2
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+force_disable_mesh_compression=false

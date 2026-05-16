@@ -1,23 +1,46 @@
-[gd_scene format=3 uid="uid://vkomuaef32cm"]
+[gd_scene format=3 uid="uid://dwkdm6hquu5oq"]
 
-[ext_resource type="Script" uid="uid://djs1xfj63p5vj" path="res://src/scenes/player.gd" id="1_0wdt2"]
+[ext_resource type="PackedScene" uid="uid://s5ysu871ypxg" path="res://src/assets/Models/GLB format/vehicle-suv.glb" id="1_cusn3"]
+[ext_resource type="Script" uid="uid://d26w4jo2dj05k" path="res://src/scripts/player.gd" id="1_v4rts"]
 
-[sub_resource type="CapsuleMesh" id="CapsuleMesh_7sgbr"]
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_v4rts"]
+bounce = 0.1
 
-[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_0wdt2"]
+[sub_resource type="SphereShape3D" id="SphereShape3D_26beo"]
+radius = 1.0
 
-[node name="Player" type="CharacterBody3D" unique_id=677819650]
-script = ExtResource("1_0wdt2")
+[sub_resource type="SphereMesh" id="SphereMesh_cusn3"]
+radius = 1.0
+height = 2.0
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=1681553544]
-mesh = SubResource("CapsuleMesh_7sgbr")
+[node name="player(*)" type="Node3D" unique_id=383005817]
+script = ExtResource("1_v4rts")
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1820023143]
-shape = SubResource("CapsuleShape3D_0wdt2")
+[node name="ball" type="RigidBody3D" parent="." unique_id=733653797]
+visible = false
+physics_material_override = SubResource("PhysicsMaterial_v4rts")
+gravity_scale = 5.0
+angular_damp = 5.0
 
-[node name="pivote" type="Node3D" parent="." unique_id=1378724949]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="ball" unique_id=2076651209]
+shape = SubResource("SphereShape3D_26beo")
 
-[node name="SpringArm3D" type="SpringArm3D" parent="pivote" unique_id=1226732387]
+[node name="MeshInstance3D" type="MeshInstance3D" parent="ball" unique_id=189207248]
+mesh = SubResource("SphereMesh_cusn3")
 
-[node name="Camera3D" type="Camera3D" parent="pivote/SpringArm3D" unique_id=1339027096]
-transform = Transform3D(1, 0, 0, 0, 0.7578839, 0.65238947, 0, -0.65238947, 0.7578839, 0, 2.7011278, 5.4003572)
+[node name="vehículo" parent="." unique_id=1461442258 instance=ExtResource("1_cusn3")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1, 0)
+
+[node name="vehicle-suv" parent="vehículo" index="0" unique_id=1043710294]
+transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, 0, 0, 0)
+
+[node name="RayCast3D" type="RayCast3D" parent="vehículo" unique_id=188867799]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.053539902, 0)
+
+[node name="Pivote" type="Marker3D" parent="." unique_id=1745730279]
+transform = Transform3D(1, 0, 0, 0, 0.9510133, 0.3091498, 0, -0.3091498, 0.9510133, 0, 0, 0)
+
+[node name="Camera3D" type="Camera3D" parent="Pivote" unique_id=1347489923]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 3.827907)
+
+[editable path="vehículo"]

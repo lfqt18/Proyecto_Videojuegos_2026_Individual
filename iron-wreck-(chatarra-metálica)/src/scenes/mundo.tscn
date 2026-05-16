@@ -1,12 +1,7 @@
 [gd_scene format=3 uid="uid://bistu1ikvllm4"]
 
-[ext_resource type="PackedScene" uid="uid://vkomuaef32cm" path="res://src/scenes/Player.tscn" id="1_tabwl"]
-
-[sub_resource type="BoxMesh" id="BoxMesh_pesjd"]
-size = Vector3(10, 1, 10)
-
-[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_tabwl"]
-points = PackedVector3Array(4.7881784, 0.5, 4.787241, -5.078371, -0.57936513, -5.077377, -5.078371, -0.57936513, 5.077377, 5.078371, -0.57936513, -5.077377, -4.7881784, 0.5, -4.787241, 5.078371, -0.57936513, 5.077377, -4.7881784, 0.5, 4.787241, 4.7881784, 0.5, -4.787241)
+[ext_resource type="Texture2D" uid="uid://xk7j0s1fpdhv" path="res://icon.svg" id="1_r122g"]
+[ext_resource type="PackedScene" uid="uid://dwkdm6hquu5oq" path="res://src/scenes/player.tscn" id="2_x4uf2"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_tabwl"]
 
@@ -17,15 +12,10 @@ sky_material = SubResource("ProceduralSkyMaterial_tabwl")
 background_mode = 2
 sky = SubResource("Sky_r122g")
 
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_t1eg8"]
+albedo_texture = ExtResource("1_r122g")
+
 [node name="Mundo" type="Node3D" unique_id=556007047]
-
-[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=1278157513]
-mesh = SubResource("BoxMesh_pesjd")
-
-[node name="StaticBody3D" type="StaticBody3D" parent="MeshInstance3D" unique_id=1410786142]
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="MeshInstance3D/StaticBody3D" unique_id=1180279340]
-shape = SubResource("ConvexPolygonShape3D_tabwl")
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=1551187525]
 environment = SubResource("Environment_x4uf2")
@@ -33,5 +23,10 @@ environment = SubResource("Environment_x4uf2")
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=469311705]
 transform = Transform3D(-0.564823, -0.23608473, -0.7907206, -0.8252121, 0.16159005, 0.541215, 0, 0.95820284, -0.28608975, 0, 0, 0)
 
-[node name="Player" parent="." unique_id=677819650 instance=ExtResource("1_tabwl")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.2199364, 1.5424864)
+[node name="CSGBox3D" type="CSGBox3D" parent="." unique_id=1429711903]
+material_override = SubResource("StandardMaterial3D_t1eg8")
+use_collision = true
+size = Vector3(100, 1, 100)
+
+[node name="player(*)" parent="." unique_id=383005817 instance=ExtResource("2_x4uf2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.763772, 6.4546833, 0.31833363)
